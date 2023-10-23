@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+https://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+         <context:property-placeholder location ="application.properties"/>
+
+
+    <bean id="java"
+          class="org.peaksoft.JavaTeacher"/>
+
+    <bean id="javaScript"
+          class="org.peaksoft.JsTeacher"/>
+
+    <bean id="course"
+          class="org.peaksoft.Course">
+        <property name="javaTeacher" ref="java"/>
+        <property name="name" value="Peaksoft"/>
+        <property name="price" value="12000"/>
+    </bean>
+<!--        Di with constructor-->
+
+<!--        <bean id="course"-->
+<!--              class="org.peaksoft.Course">-->
+<!--            <constructor-arg ref="java"/>-->
+<!--        </bean>-->
+
+
+
+
+</beans>
+
+
+
+
+
